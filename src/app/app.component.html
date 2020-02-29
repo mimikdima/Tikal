@@ -1,0 +1,25 @@
+<div class="content" *ngIf="data">
+  <div class="isolated-country">
+      Most isolated country is <b>{{mostIsolatedCountry}}</b> with an isolation degree of <b>{{isolatedCountrysCount[mostIsolatedCountry]}}</b>.
+  </div>
+
+  <div class="wrapper">
+    <div class="row header-background">
+      <div class="header">Agent ID</div>
+      <div class="header">Country</div>
+      <div class="header">Address</div>
+      <div class="header">Date</div>
+    </div>
+
+    <div class="row" *ngFor="let d of data | sortByDate">
+      <div class="box">{{d.agent}}</div>
+      <div class="box">{{d.country}}</div>
+      <div class="box">{{d.address}}</div>
+      <div class="box">{{d.date}}</div>
+    </div>
+
+    <div class="footer">
+      {{data.length}} missions
+    </div>
+  </div>
+</div>
